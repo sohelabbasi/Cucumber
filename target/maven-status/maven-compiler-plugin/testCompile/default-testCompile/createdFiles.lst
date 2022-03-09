@@ -1,8 +1,10 @@
-steps\EmployeeSteps.class
 steps\LoginSteps.class
+pages\AddEmployeePage.class
+pages\LoginPage.class
 Runners\Runnerclass.class
-utilities\CommonMethods.class
-utilities\ConfigReader.class
 utilities\Constants.class
 steps\DashboardSteps.class
+steps\EmployeeSteps.class
+utilities\CommonMethods.class
+utilities\ConfigReader.class
 steps\Hooks.class
