@@ -1,0 +1,86 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-03-08T06:03:03.742Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4954410000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.start()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Verification of dashboard feature",
+        "description": "",
+        "id": "verify-dashboard-options;verification-of-dashboard-feature",
+        "after": [
+          {
+            "result": {
+              "duration": 163979500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.end()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 239936600,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user enters valid login username and password",
+            "match": {
+              "location": "steps.LoginSteps.user_enters_valid_login_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2915551000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user clicks on login button",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user verify dashboard page",
+            "match": {
+              "location": "steps.DashboardSteps.user_verify_dashboard_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke1"
+          }
+        ]
+      }
+    ],
+    "name": "Verify dashboard options",
+    "description": "",
+    "id": "verify-dashboard-options",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Dashboard.feature",
+    "tags": []
+  }
+]
