@@ -12,6 +12,9 @@ import org.junit.runner.RunWith;
         //it stops actual execution, and checks all the steps whether they have definitions or not
         dryRun = false,
         tags = "@smoke",
+
+
+
         plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json"}
 )
 
