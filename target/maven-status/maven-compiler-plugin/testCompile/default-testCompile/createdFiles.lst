@@ -3,6 +3,7 @@ pages\AddEmployeePage.class
 pages\LoginPage.class
 utilities\Constants.class
 steps\DashboardSteps.class
+utilities\ExcelReader.class
 steps\EmployeeSteps.class
 Runners\smoke.class
 utilities\CommonMethods.class

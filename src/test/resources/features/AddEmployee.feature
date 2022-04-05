@@ -30,4 +30,7 @@ Background:
     |eleni   |MS        |abc     |
     |sule    |MS        |ozdemir |
 
+@excel
+Scenario: Adding multiple employees from excel file
+  When user add multiple employees from excel file using "EmployeeData" sheet
 

@@ -7,7 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.AddEmployeePage;
 import utilities.CommonMethods;
+import utilities.Constants;
+import utilities.ExcelReader;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static steps.LoginSteps.driver;
@@ -68,6 +73,23 @@ public class EmployeeSteps extends CommonMethods {
         sendData(add.middleName, middlename);
         sendData(add.lastName, lastname);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
+
+    @When("user add multiple employees from excel file using {string} sheet")
+    public void user_add_multiple_employees_from_excel_file_using_sheet(String sheetname) throws InterruptedException {
+       List<Map<String,String>> newEmployees =  ExcelReader.excelIntoListMap(Constants.TESTDATA_PATH, sheetname);
+        AddEmployeePage add = new AddEmployeePage();
+        Iterator<Map<String,String>> itr = newEmployees.iterator();
+        while (itr.hasNext()){
+            Map<String, String> mapNewEmp = itr.next();
+            sendData(add.firstName, mapNewEmp.get("FirstName"));
+            sendData(add.middleName, mapNewEmp.get("MiddleName"));
+            sendData(add.lastName, mapNewEmp.get("LastName"));
+            add.saveButton.click();
+            Thread.sleep(2000);
+            add.addEmployeeButton.click();
+        }
     }
 
 }
