@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         glue = "steps",
         //it stops actual execution, and checks all the steps whether they have definitions or not
         dryRun = false,
-        tags = "@smoke1",
+        tags = "@smoke",
         plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json"}
 )
 
-public class Runnerclass {
+public class smoke {
 }
