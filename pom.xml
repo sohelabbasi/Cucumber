@@ -13,9 +13,6 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-
-
-
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -77,6 +74,8 @@
                             <!-- optional, defaults to outputDirectory if not specified -->
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
+
+
                                 <!-- supports wildcard or name pattern -->
                                 <param>**/*.json</param>
                             </jsonFiles>
@@ -85,7 +84,6 @@
                 </executions>
             </plugin>
         </plugins>
-
 
     </build>
 
