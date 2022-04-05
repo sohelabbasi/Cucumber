@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -16,10 +17,17 @@ public class CommonMethods {
         ConfigReader.readProperties(Constants.CONFIG_PATH);
         switch (ConfigReader.getPropertyValue("browser")){
             case "chrome":
-                WebDriverManager.chromedriver().setup();
-                //initializing the chrome driver instance
-                driver = new ChromeDriver();
-                System.out.println("My browser is opened");
+                if(ConfigReader.getPropertyValue("headless").equals("true")) {
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.setHeadless(true);
+                    WebDriverManager.chromedriver().setup();
+                    //initializing the chrome driver instance
+                    driver = new ChromeDriver(chromeOptions);
+                    System.out.println("My browser is opened");
+                }else{
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                }
                 //to clear all the cookies
                 driver.manage().deleteAllCookies();
                 driver.manage().window().maximize();
